@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "b9dcc7d2-fab4-430f-ae4e-ec1b777966af",
+		"name": "MERN-TODO-App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24232089"
+	},
+	"item": [
+		{
+			"name": "GET ALL TODOS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/todos-all",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"todos-all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET A TODO",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/todo/648247273c0eecc93de990c0",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"todo",
+						"648247273c0eecc93de990c0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE A TODO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"title\":\"Hello world 1\",\r\n   \"description\":\"This is my nine todo.\",\r\n   \"completed\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/todo/new",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"todo",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE A TODO",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Hello world 0\",\r\n    \"description\": \"This is my one todo.\",\r\n    \"completed\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/todo/648247273c0eecc93de990c0",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"todo",
+						"648247273c0eecc93de990c0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE A TODO",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/todo/648247273c0eecc93de990c0",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"todo",
+						"648247273c0eecc93de990c0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REGISTER USER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user1\",\n    \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/user/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AUTH USER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user1\",\n    \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/user/authorization",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"authorization"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000"
+		},
+		{
+			"key": "token",
+			"value": "token"
+		}
+	]
+}
